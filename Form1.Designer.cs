@@ -39,6 +39,12 @@ namespace linq_example
             this.buttonMaxNumber = new System.Windows.Forms.Button();
             this.buttonMinNumber = new System.Windows.Forms.Button();
             this.buttonCountNum = new System.Windows.Forms.Button();
+            this.buttonGetCities = new System.Windows.Forms.Button();
+            this.buttonAsc = new System.Windows.Forms.Button();
+            this.buttonDesc = new System.Windows.Forms.Button();
+            this.buttonLength = new System.Windows.Forms.Button();
+            this.buttonContain = new System.Windows.Forms.Button();
+            this.buttonStartWith = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +52,7 @@ namespace linq_example
             // 
             this.buttonGetNumbers.Location = new System.Drawing.Point(12, 33);
             this.buttonGetNumbers.Name = "buttonGetNumbers";
-            this.buttonGetNumbers.Size = new System.Drawing.Size(100, 40);
+            this.buttonGetNumbers.Size = new System.Drawing.Size(142, 40);
             this.buttonGetNumbers.TabIndex = 0;
             this.buttonGetNumbers.Text = "Get Numbers";
             this.buttonGetNumbers.UseVisualStyleBackColor = true;
@@ -73,7 +79,7 @@ namespace linq_example
             // 
             // buttonNegativeNumbers
             // 
-            this.buttonNegativeNumbers.Location = new System.Drawing.Point(118, 33);
+            this.buttonNegativeNumbers.Location = new System.Drawing.Point(160, 33);
             this.buttonNegativeNumbers.Name = "buttonNegativeNumbers";
             this.buttonNegativeNumbers.Size = new System.Drawing.Size(100, 40);
             this.buttonNegativeNumbers.TabIndex = 3;
@@ -83,7 +89,7 @@ namespace linq_example
             // 
             // buttonPositiveNumbers
             // 
-            this.buttonPositiveNumbers.Location = new System.Drawing.Point(224, 33);
+            this.buttonPositiveNumbers.Location = new System.Drawing.Point(266, 33);
             this.buttonPositiveNumbers.Name = "buttonPositiveNumbers";
             this.buttonPositiveNumbers.Size = new System.Drawing.Size(100, 40);
             this.buttonPositiveNumbers.TabIndex = 3;
@@ -93,7 +99,7 @@ namespace linq_example
             // 
             // buttonOddNumbers
             // 
-            this.buttonOddNumbers.Location = new System.Drawing.Point(330, 33);
+            this.buttonOddNumbers.Location = new System.Drawing.Point(372, 33);
             this.buttonOddNumbers.Name = "buttonOddNumbers";
             this.buttonOddNumbers.Size = new System.Drawing.Size(100, 40);
             this.buttonOddNumbers.TabIndex = 3;
@@ -103,7 +109,7 @@ namespace linq_example
             // 
             // buttonEvenNumbers
             // 
-            this.buttonEvenNumbers.Location = new System.Drawing.Point(436, 33);
+            this.buttonEvenNumbers.Location = new System.Drawing.Point(478, 33);
             this.buttonEvenNumbers.Name = "buttonEvenNumbers";
             this.buttonEvenNumbers.Size = new System.Drawing.Size(100, 40);
             this.buttonEvenNumbers.TabIndex = 3;
@@ -113,9 +119,9 @@ namespace linq_example
             // 
             // buttonMaxNumber
             // 
-            this.buttonMaxNumber.Location = new System.Drawing.Point(542, 33);
+            this.buttonMaxNumber.Location = new System.Drawing.Point(584, 33);
             this.buttonMaxNumber.Name = "buttonMaxNumber";
-            this.buttonMaxNumber.Size = new System.Drawing.Size(100, 40);
+            this.buttonMaxNumber.Size = new System.Drawing.Size(69, 40);
             this.buttonMaxNumber.TabIndex = 3;
             this.buttonMaxNumber.Text = "Max.";
             this.buttonMaxNumber.UseVisualStyleBackColor = true;
@@ -123,9 +129,9 @@ namespace linq_example
             // 
             // buttonMinNumber
             // 
-            this.buttonMinNumber.Location = new System.Drawing.Point(648, 33);
+            this.buttonMinNumber.Location = new System.Drawing.Point(659, 33);
             this.buttonMinNumber.Name = "buttonMinNumber";
-            this.buttonMinNumber.Size = new System.Drawing.Size(100, 40);
+            this.buttonMinNumber.Size = new System.Drawing.Size(69, 40);
             this.buttonMinNumber.TabIndex = 3;
             this.buttonMinNumber.Text = "Min.";
             this.buttonMinNumber.UseVisualStyleBackColor = true;
@@ -133,19 +139,85 @@ namespace linq_example
             // 
             // buttonCountNum
             // 
-            this.buttonCountNum.Location = new System.Drawing.Point(754, 33);
+            this.buttonCountNum.Location = new System.Drawing.Point(734, 33);
             this.buttonCountNum.Name = "buttonCountNum";
-            this.buttonCountNum.Size = new System.Drawing.Size(100, 40);
+            this.buttonCountNum.Size = new System.Drawing.Size(82, 40);
             this.buttonCountNum.TabIndex = 3;
             this.buttonCountNum.Text = "Count";
             this.buttonCountNum.UseVisualStyleBackColor = true;
             this.buttonCountNum.Click += new System.EventHandler(this.buttonCountNum_Click);
+            // 
+            // buttonGetCities
+            // 
+            this.buttonGetCities.Location = new System.Drawing.Point(12, 91);
+            this.buttonGetCities.Name = "buttonGetCities";
+            this.buttonGetCities.Size = new System.Drawing.Size(121, 40);
+            this.buttonGetCities.TabIndex = 4;
+            this.buttonGetCities.Text = "Get Cities";
+            this.buttonGetCities.UseVisualStyleBackColor = true;
+            this.buttonGetCities.Click += new System.EventHandler(this.buttonGetCities_Click);
+            // 
+            // buttonAsc
+            // 
+            this.buttonAsc.Location = new System.Drawing.Point(139, 91);
+            this.buttonAsc.Name = "buttonAsc";
+            this.buttonAsc.Size = new System.Drawing.Size(100, 40);
+            this.buttonAsc.TabIndex = 5;
+            this.buttonAsc.Text = "ASC";
+            this.buttonAsc.UseVisualStyleBackColor = true;
+            this.buttonAsc.Click += new System.EventHandler(this.buttonAsc_Click);
+            // 
+            // buttonDesc
+            // 
+            this.buttonDesc.Location = new System.Drawing.Point(245, 91);
+            this.buttonDesc.Name = "buttonDesc";
+            this.buttonDesc.Size = new System.Drawing.Size(100, 40);
+            this.buttonDesc.TabIndex = 5;
+            this.buttonDesc.Text = "DSC";
+            this.buttonDesc.UseVisualStyleBackColor = true;
+            this.buttonDesc.Click += new System.EventHandler(this.buttonDesc_Click);
+            // 
+            // buttonLength
+            // 
+            this.buttonLength.Location = new System.Drawing.Point(351, 91);
+            this.buttonLength.Name = "buttonLength";
+            this.buttonLength.Size = new System.Drawing.Size(100, 40);
+            this.buttonLength.TabIndex = 5;
+            this.buttonLength.Text = "Length";
+            this.buttonLength.UseVisualStyleBackColor = true;
+            this.buttonLength.Click += new System.EventHandler(this.buttonLength_Click);
+            // 
+            // buttonContain
+            // 
+            this.buttonContain.Location = new System.Drawing.Point(457, 91);
+            this.buttonContain.Name = "buttonContain";
+            this.buttonContain.Size = new System.Drawing.Size(113, 40);
+            this.buttonContain.TabIndex = 5;
+            this.buttonContain.Text = "Contains \"t\"";
+            this.buttonContain.UseVisualStyleBackColor = true;
+            this.buttonContain.Click += new System.EventHandler(this.buttonContain_Click);
+            // 
+            // buttonStartWith
+            // 
+            this.buttonStartWith.Location = new System.Drawing.Point(576, 91);
+            this.buttonStartWith.Name = "buttonStartWith";
+            this.buttonStartWith.Size = new System.Drawing.Size(141, 40);
+            this.buttonStartWith.TabIndex = 5;
+            this.buttonStartWith.Text = "Start With\"z\"";
+            this.buttonStartWith.UseVisualStyleBackColor = true;
+            this.buttonStartWith.Click += new System.EventHandler(this.buttonStartWith_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 450);
+            this.Controls.Add(this.buttonStartWith);
+            this.Controls.Add(this.buttonContain);
+            this.Controls.Add(this.buttonLength);
+            this.Controls.Add(this.buttonDesc);
+            this.Controls.Add(this.buttonAsc);
+            this.Controls.Add(this.buttonGetCities);
             this.Controls.Add(this.buttonCountNum);
             this.Controls.Add(this.buttonMinNumber);
             this.Controls.Add(this.buttonMaxNumber);
@@ -176,6 +248,12 @@ namespace linq_example
         private System.Windows.Forms.Button buttonMaxNumber;
         private System.Windows.Forms.Button buttonMinNumber;
         private System.Windows.Forms.Button buttonCountNum;
+        private System.Windows.Forms.Button buttonGetCities;
+        private System.Windows.Forms.Button buttonAsc;
+        private System.Windows.Forms.Button buttonDesc;
+        private System.Windows.Forms.Button buttonLength;
+        private System.Windows.Forms.Button buttonContain;
+        private System.Windows.Forms.Button buttonStartWith;
     }
 }
 

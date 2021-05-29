@@ -41,6 +41,7 @@ namespace linq_example
 
         }
 
+        // Num Ops ---------------
         private void buttonGetNumbers_Click(object sender, EventArgs e)
         {
             listBox1.DataSource = null;
@@ -91,6 +92,54 @@ namespace linq_example
         {
             int countList = numbrs.Count();
             MessageBox.Show(countList.ToString());
+        }
+
+        // String ops --------------------
+
+
+        private void buttonGetCities_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = cities;
+        }
+
+        private void buttonAsc_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = cities.OrderBy(x=>x).ToList();
+        }
+
+        private void buttonDesc_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = cities.OrderByDescending(x => x).ToList();
+        }
+
+        private void buttonLength_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+
+            List<string> temp = new List<string>();
+            foreach (var item in cities)
+            {
+                temp.Add(item +"  " +item.Length );
+            }
+                       
+            listBox1.DataSource =temp ;
+           
+        }
+
+        private void buttonContain_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = cities.Where(x => x.Contains('t') || x.Contains('T')).ToList();
+
+        }
+
+        private void buttonStartWith_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = cities.Where(x => x.StartsWith("z") || x.StartsWith("Z")).ToList();
         }
     }
 }
