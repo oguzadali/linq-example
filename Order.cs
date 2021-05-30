@@ -23,7 +23,7 @@ namespace linq_example
             List<Order> lisT = new List<Order>();
             string SqlQr1 = @"select d.CustomerID,d.EmployeeID,d.OrderID,d.OrderDate,
                             (Select ContactName from Customers
-                            where CustomerID=d.CustomerID) as 'Contact Name'
+                            where CustomerID=d.CustomerID) as 'ContactName'
                             from Orders d";
             DataTable dataTable1 = GetDataTable(SqlQr1);
 
@@ -33,10 +33,10 @@ namespace linq_example
                 or.OrderID =(int) item["OrderID"];
                 or.CustomerID =(string) item["CustomerID"];
                 or.EmployeeID =(int) item["EmployeeID"];
-                or.OrderDate =(DateTime) item["OrderDate "];
+                or.OrderDate =(DateTime)item["OrderDate"];
                 or.Customer =new Customer();
                 or.Customer.ContactName =item["ContactName"].ToString();
-                or.Customer.CustumerID =(string) item["CustumerID"];
+                or.Customer.CustomerID =(string) item["CustomerID"];
 
                 //or =(int) item[""];
 
@@ -58,7 +58,7 @@ namespace linq_example
 
     class Customer
     {
-        public string CustumerID { get; set; }
+        public string CustomerID { get; set; }
         public string ContactName { get; set; }
         public List<Order> Orders { get; set; }
         public int OrderCount

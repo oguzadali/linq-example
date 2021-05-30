@@ -141,5 +141,62 @@ namespace linq_example
             listBox1.DataSource = null;
             listBox1.DataSource = cities.Where(x => x.StartsWith("z") || x.StartsWith("Z")).ToList();
         }
+
+        //DB Table operations
+        private void buttonGetOrders_Click(object sender, EventArgs e)
+        {
+            List<Order> orders = new Order().GetOrders();
+            var gt = orders.Select(x => new
+            {
+                OrderId = x.OrderID,
+                Date = x.OrderDate,
+                Customer = x.Customer.ContactName
+            }) ;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = gt.ToList();
+        }
+
+        private void buttonDate_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            List<Order> orders = new Order().GetOrders();
+            dataGridView1.DataSource = orders.Select(x => x.OrderDate).ToList();
+        }
+
+        private void buttonTopFive_Click(object sender, EventArgs e)
+        {
+            List<Order> orders = new Order().GetOrders();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = orders.Take(5).ToList();
+        }
+
+        private void buttonLastFive_Click(object sender, EventArgs e)
+        {
+            List<Order> orders = new Order().GetOrders();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = orders.OrderByDescending(x => x.OrderID).Take(5)
+                .Select(x => new
+                {
+                    x.OrderID,
+                    x.Customer.ContactName,
+                    x.OrderDate
+
+                }).ToList();
+        }
+
+        private void buttonGetX_Click(object sender, EventArgs e)
+        {
+            List<Order> orders = new Order().GetOrders();
+            dataGridView1.DataSource = null;
+            var filter = orders.Where(x => x.Customer.ContactName == "Maria Anders").ToList();
+            dataGridView1.DataSource = filter;
+        }
+
+        private void buttonOrderCount_Click(object sender, EventArgs e)
+        {
+            List<Order> orders = new Order().GetOrders();
+            int count = orders.Count;
+            MessageBox.Show(count.ToString());
+        }
     }
 }

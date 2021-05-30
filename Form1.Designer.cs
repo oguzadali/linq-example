@@ -45,6 +45,12 @@ namespace linq_example
             this.buttonLength = new System.Windows.Forms.Button();
             this.buttonContain = new System.Windows.Forms.Button();
             this.buttonStartWith = new System.Windows.Forms.Button();
+            this.buttonGetOrders = new System.Windows.Forms.Button();
+            this.buttonDate = new System.Windows.Forms.Button();
+            this.buttonTopFive = new System.Windows.Forms.Button();
+            this.buttonLastFive = new System.Windows.Forms.Button();
+            this.buttonGetX = new System.Windows.Forms.Button();
+            this.buttonOrderCount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,19 +68,19 @@ namespace linq_example
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 233);
+            this.listBox1.Location = new System.Drawing.Point(12, 217);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(142, 212);
+            this.listBox1.Size = new System.Drawing.Size(142, 260);
             this.listBox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(173, 233);
+            this.dataGridView1.Location = new System.Drawing.Point(160, 217);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(615, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(721, 260);
             this.dataGridView1.TabIndex = 2;
             // 
             // buttonNegativeNumbers
@@ -207,15 +213,81 @@ namespace linq_example
             this.buttonStartWith.UseVisualStyleBackColor = true;
             this.buttonStartWith.Click += new System.EventHandler(this.buttonStartWith_Click);
             // 
+            // buttonGetOrders
+            // 
+            this.buttonGetOrders.Location = new System.Drawing.Point(13, 149);
+            this.buttonGetOrders.Name = "buttonGetOrders";
+            this.buttonGetOrders.Size = new System.Drawing.Size(100, 40);
+            this.buttonGetOrders.TabIndex = 5;
+            this.buttonGetOrders.Text = "Get Orders";
+            this.buttonGetOrders.UseVisualStyleBackColor = true;
+            this.buttonGetOrders.Click += new System.EventHandler(this.buttonGetOrders_Click);
+            // 
+            // buttonDate
+            // 
+            this.buttonDate.Location = new System.Drawing.Point(119, 149);
+            this.buttonDate.Name = "buttonDate";
+            this.buttonDate.Size = new System.Drawing.Size(100, 40);
+            this.buttonDate.TabIndex = 5;
+            this.buttonDate.Text = "Date";
+            this.buttonDate.UseVisualStyleBackColor = true;
+            this.buttonDate.Click += new System.EventHandler(this.buttonDate_Click);
+            // 
+            // buttonTopFive
+            // 
+            this.buttonTopFive.Location = new System.Drawing.Point(225, 149);
+            this.buttonTopFive.Name = "buttonTopFive";
+            this.buttonTopFive.Size = new System.Drawing.Size(100, 40);
+            this.buttonTopFive.TabIndex = 5;
+            this.buttonTopFive.Text = "Top5";
+            this.buttonTopFive.UseVisualStyleBackColor = true;
+            this.buttonTopFive.Click += new System.EventHandler(this.buttonTopFive_Click);
+            // 
+            // buttonLastFive
+            // 
+            this.buttonLastFive.Location = new System.Drawing.Point(331, 149);
+            this.buttonLastFive.Name = "buttonLastFive";
+            this.buttonLastFive.Size = new System.Drawing.Size(100, 40);
+            this.buttonLastFive.TabIndex = 5;
+            this.buttonLastFive.Text = "Last5";
+            this.buttonLastFive.UseVisualStyleBackColor = true;
+            this.buttonLastFive.Click += new System.EventHandler(this.buttonLastFive_Click);
+            // 
+            // buttonGetX
+            // 
+            this.buttonGetX.Location = new System.Drawing.Point(437, 149);
+            this.buttonGetX.Name = "buttonGetX";
+            this.buttonGetX.Size = new System.Drawing.Size(198, 40);
+            this.buttonGetX.TabIndex = 5;
+            this.buttonGetX.Text = "Get Maria Anders Data";
+            this.buttonGetX.UseVisualStyleBackColor = true;
+            this.buttonGetX.Click += new System.EventHandler(this.buttonGetX_Click);
+            // 
+            // buttonOrderCount
+            // 
+            this.buttonOrderCount.Location = new System.Drawing.Point(641, 149);
+            this.buttonOrderCount.Name = "buttonOrderCount";
+            this.buttonOrderCount.Size = new System.Drawing.Size(110, 40);
+            this.buttonOrderCount.TabIndex = 5;
+            this.buttonOrderCount.Text = "Orders Count";
+            this.buttonOrderCount.UseVisualStyleBackColor = true;
+            this.buttonOrderCount.Click += new System.EventHandler(this.buttonOrderCount_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 450);
+            this.ClientSize = new System.Drawing.Size(893, 472);
             this.Controls.Add(this.buttonStartWith);
             this.Controls.Add(this.buttonContain);
             this.Controls.Add(this.buttonLength);
             this.Controls.Add(this.buttonDesc);
+            this.Controls.Add(this.buttonOrderCount);
+            this.Controls.Add(this.buttonGetX);
+            this.Controls.Add(this.buttonLastFive);
+            this.Controls.Add(this.buttonTopFive);
+            this.Controls.Add(this.buttonDate);
+            this.Controls.Add(this.buttonGetOrders);
             this.Controls.Add(this.buttonAsc);
             this.Controls.Add(this.buttonGetCities);
             this.Controls.Add(this.buttonCountNum);
@@ -254,6 +326,12 @@ namespace linq_example
         private System.Windows.Forms.Button buttonLength;
         private System.Windows.Forms.Button buttonContain;
         private System.Windows.Forms.Button buttonStartWith;
+        private System.Windows.Forms.Button buttonGetOrders;
+        private System.Windows.Forms.Button buttonDate;
+        private System.Windows.Forms.Button buttonTopFive;
+        private System.Windows.Forms.Button buttonLastFive;
+        private System.Windows.Forms.Button buttonGetX;
+        private System.Windows.Forms.Button buttonOrderCount;
     }
 }
 
