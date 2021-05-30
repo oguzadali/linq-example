@@ -70,7 +70,7 @@ namespace linq_example
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(12, 217);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(142, 260);
+            this.listBox1.Size = new System.Drawing.Size(142, 340);
             this.listBox1.TabIndex = 1;
             // 
             // dataGridView1
@@ -80,7 +80,7 @@ namespace linq_example
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(721, 260);
+            this.dataGridView1.Size = new System.Drawing.Size(721, 343);
             this.dataGridView1.TabIndex = 2;
             // 
             // buttonNegativeNumbers
@@ -277,7 +277,7 @@ namespace linq_example
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 472);
+            this.ClientSize = new System.Drawing.Size(893, 558);
             this.Controls.Add(this.buttonStartWith);
             this.Controls.Add(this.buttonContain);
             this.Controls.Add(this.buttonLength);
